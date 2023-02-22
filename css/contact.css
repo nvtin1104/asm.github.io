@@ -1,0 +1,49 @@
+.contact-background{
+    width: 1200px;
+    height: 600px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    margin-top: 30px;
+}
+.contact{
+    text-align: center;
+    width: 800px;
+    margin:auto;
+    position: relative;
+}
+.input-contact{
+    margin: 10px;
+    border-bottom: 2px solid #514949;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    display: flex;
+}
+.input-contact>input{
+    min-width: 600px;
+    border: none;
+}
+h3{
+    padding: 20px 20px;
+    margin-top: 10px;
+}
+.contact>button{
+    border-radius: 20px;
+    height: 40px;
+    width: 80px;
+    background-color: rgb(201, 33, 39);
+    color: aliceblue;
+    border: none;
+}
+button:hover{
+    opacity: 0.8;
+    transition: 1s;
+}
+.icon-contact{
+    text-align: center;
+    margin: 40px;
+    font-size: 20px;
+}
+h4>i{
+    font-size:30px ;
+}

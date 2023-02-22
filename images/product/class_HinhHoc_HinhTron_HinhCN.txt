@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VD_KE_THUA
+{
+    class HinhHoc
+    {
+        public string tenhinh;//đưa lên từ Hinhtron, HinhCN. kiểu truy xuất: protected
+        protected double CV;
+        private string riengtu;// test
+        public HinhHoc() 
+        {
+        }    
+        public HinhHoc(string t)
+        {
+            tenhinh= t;
+        }    
+        public void NhapTT(string t)
+        {
+            tenhinh= t;
+        }
+        public void InTT()
+        {
+            Console.WriteLine("ten hinh {0}", tenhinh);
+        }
+        public double TinhCV()
+        {
+            return 0;
+        }
+    }
+    class HinhTron: HinhHoc
+    {
+       // public string tenhinh;//đỡ 1 dòng code + 4byte bộ nhớ
+        public double bankinh;
+        public HinhTron(string t,double bk):base(t)
+        {
+            bankinh = bk;//
+        }
+        public void NhapTT(string t,double bk)
+        {
+            base.NhapTT(t);// nhập tên dựa vào Phương Thức NhapTT lớp cha
+            bankinh= bk;
+        }
+        //public new void InTT()
+        //{
+        //    base.InTT();//lấy từ lớp HinhHoc
+        //    Console.WriteLine("ban kinh {0}", bankinh);
+        //}
+    }
+    class HinhCN:HinhHoc
+    {
+      
+        public double chieudai;
+        public double chieurong;
+        public HinhCN():base()
+        {
+            //ko làm j het
+        }
+        public HinhCN(string t):base(t)
+        {
+            //tự gán tên ở constructor lớp cha. trong này ko làm j hết
+        }
+        public void NhapTT(string t, double cd,double cr)
+        {
+            base.NhapTT(t);// nhập tên dựa vào Phương Thức NhapTT lớp cha
+            chieudai = cd;
+            chieurong = cr;
+        }
+        public new void InTT()
+        {
+            base.InTT();//lấy từ lớp HinhHoc
+            Console.WriteLine("chieu dai {0}", chieudai);
+            Console.WriteLine("chieu rong {0}", chieurong);
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            HinhTron t=new HinhTron("A",10);//lớp cha khai báo constructor thì lớp con phải khai báo lại
+           // t.NhapTT("O", 5);
+            t.InTT();//in được. in ra cái j
+           
+            HinhCN cn=new HinhCN("QWER");
+            cn.NhapTT("ABCD", 10, 5);
+            cn.InTT();
+            HinhCN cn1 = new HinhCN();//khai báo 2 constructor. nên có 2 cách khởi tạo OBJ
+            Console.ReadLine();
+
+        }
+    }
+}
